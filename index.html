@@ -10,7 +10,7 @@ To change this template use Tools | Templates.
 </head>
 <body>
 <script>
-    var socket = io.connect('http://acetum-sneery.codio.io:3000');
+    var socket = io.connect('http://'+window.location.hostname+':3000');
     socket.on('connect', function () {
         console.log('Connected!');
         $('textarea#chat').append('Connected!');
