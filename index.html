@@ -15,6 +15,7 @@ To change this template use Tools | Templates.
         console.log('Connected!');
         $('textarea#chat').append('Connected!');
         socket.on('message', function(data) {$('textarea#chat').append(data);});
+        setInterval(function(){socket.emit('message', 'Hi, again!');}, 2000);
     });
 </script>
 <div>
