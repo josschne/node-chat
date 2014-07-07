@@ -15,12 +15,12 @@ To change this template use Tools | Templates.
         console.log('Connected!');
         $('textarea#chat').append('Connected!');
         socket.on('message', function(data) {$('textarea#chat').append(data);});
-        setInterval(function(){socket.emit('message', 'Hi, again!');}, 2000);
+        $('#submit').click(function(e){socket.emit('message', $('#chat_text').val());});
     });
 </script>
 <div>
 <textarea rows="10" cols="120" disabled="true" id="chat">Chat messages appear here!</textarea>
 </div>
-<input type="text" id="chat_text"/>
+<input type="text" id="chat_text"/><input type="button" id="submit"/>
 </body>
 </html>
